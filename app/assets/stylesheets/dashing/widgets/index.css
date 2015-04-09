@@ -12,7 +12,6 @@
   *= require google
  *= require font-awesome.min
  *= require bootstrap.min
- *= require style
  *= require_self
  */
 .widget-number{

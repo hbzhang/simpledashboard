@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hbzhang/dashing-rails.git
-  revision: 4592b572c83af6f4831b2f37ce0245c430a2c96e
+  revision: 0a5c620775d92e8729ed112ac4c88c8f7e5a807e
   specs:
     dashing-rails (2.4.3)
       coffee-script (~> 2.2)
