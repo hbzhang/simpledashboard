@@ -5,7 +5,7 @@ require 'oj'
 
 total_registrations = 0
 
-Dashing.scheduler.every '8s' do
+Dashing.scheduler.every '2s' do
   #last_valuation = current_valuation
   #current_valuation = rand(100)
 
@@ -30,6 +30,8 @@ Dashing.scheduler.every '8s' do
   #checked_in_percent = checked_in_percent.round
 
   puts   total_registrations 
+
+  last_valuation = total_registrations
   #puts walkup
   #puts checked_in
   #puts checked_in_percent
@@ -38,7 +40,7 @@ Dashing.scheduler.every '8s' do
   #@statshash = JSON.parse(@stats.stats) 
 
   
-  Dashing.send_event('totalregisters', { current:total_registrations})
+  Dashing.send_event('totalregisters', { current:total_registrations, last: last_valuation })
   #Dashing.send_event('walk', { current: walkup, last: walkup })
   #Dashing.send_event('checkedin',   { value: checked_in })
   #Dashing.send_event('checkedinfirstday',   { current: checked_in_first_day, last: checked_in_first_day })
