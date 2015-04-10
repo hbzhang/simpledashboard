@@ -3,7 +3,7 @@ require 'oj'
 #require 'mathn'
 
 
-total_registrations = 0
+#total_registrations = 0
 
 Dashing.scheduler.every '2s' do
   #last_valuation = current_valuation
@@ -19,7 +19,7 @@ Dashing.scheduler.every '2s' do
   @stats = HTTParty.get(@STATURL)
   @statshash  = JSON.parse(@stats.body)
 
-   #@statshash = Oj.dump(@stats.body)
+  #@statshash = Oj.dump(@stats.body)
 
   #puts @statshash 
   total_registrations =  @statshash['stats']['total_registrations']
@@ -40,7 +40,7 @@ Dashing.scheduler.every '2s' do
   #@statshash = JSON.parse(@stats.stats) 
 
   
-  Dashing.send_event('totalregisters', { current:total_registrations, last: last_valuation })
+  Dashing.send_event('totalregisters', { current:total_registrations}) #, last: last_valuation 
   #Dashing.send_event('walk', { current: walkup, last: walkup })
   #Dashing.send_event('checkedin',   { value: checked_in })
   #Dashing.send_event('checkedinfirstday',   { current: checked_in_first_day, last: checked_in_first_day })
