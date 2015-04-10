@@ -14,6 +14,12 @@
  *= require bootstrap.min
  *= require_self
  */
-.widget-number{
-    background-color: transparent;
+#container {
+    width: 100px;
+    height: 100px;
+}
+
+#container > svg {
+    width: 100%;
+    display: block;
 }

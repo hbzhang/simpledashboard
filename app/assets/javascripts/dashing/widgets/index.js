@@ -17,4 +17,5 @@
 //= require countdown/jquery.mb.YTPlayer
 //= require countdown/jquery.countdown.min
 //= require countdown/custom
+//= require countdown/progressbar.min
 

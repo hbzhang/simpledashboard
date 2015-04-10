@@ -19,9 +19,11 @@ $('#clock').countdown('2015/4/18 09:00:00').on('update.countdown', function(even
          + '<div><span>%S</span>sec</div>'));
      });
 
-    $(".widget-number").addClass("background-color", "transparent");
 
-
+/*var circle = new ProgressBar.Circle('#container', {
+    color: '#FCB03C'
+});
+circle.animate(1); */
 
     /* IF YOU WANT TO APPLY SOME BASIC JQUERY TO REMOVE THE VIDEO BACKGROUND ON A SPECIFIC VIEWPORT MANUALLY
      var is_mobile = false;
