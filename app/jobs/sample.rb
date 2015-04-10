@@ -5,7 +5,15 @@ require 'oj'
 
 #total_registrations = 0
 
-Dashing.scheduler.every '90s' do
+  @STATURL = 'http://run.recsports.vt.edu/api/stats?key=qFuWyb9A1pIkykQ'
+  @stats = HTTParty.get(@STATURL)
+  @statshash  = JSON.parse(@stats.body)
+  total_registrations =  @statshash['stats']['total_registrations']
+   puts   total_registrations 
+  Dashing.send_event('totalregisters', { current:total_registrations}) #, last: last_valuation 
+  
+
+Dashing.scheduler.every '5s' do
   #last_valuation = current_valuation
   #current_valuation = rand(100)
 
