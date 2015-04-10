@@ -5,7 +5,7 @@ require 'oj'
 
 #total_registrations = 0
 
-Dashing.scheduler.every '80s' do
+Dashing.scheduler.every '5s' do
   #last_valuation = current_valuation
   #current_valuation = rand(100)
 
