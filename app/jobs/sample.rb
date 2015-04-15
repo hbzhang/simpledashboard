@@ -13,7 +13,7 @@ require 'oj'
   #Dashing.send_event('totalregisters', { current:total_registrations}) #, last: last_valuation 
   
 
-Dashing.scheduler.every '180s' do
+Dashing.scheduler.every '100s' do
  runjob
 end
 
