@@ -17,7 +17,7 @@ Dashing.scheduler.every '1000s' do
  runjob
 end
 
-scheduler.in '3s' do
+Dashing.scheduler.in '3s' do
   runjob
 end
 
