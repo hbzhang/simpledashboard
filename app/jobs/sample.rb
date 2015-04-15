@@ -5,16 +5,24 @@ require 'oj'
 
 #total_registrations = 0
 
-  @STATURL = 'http://run.recsports.vt.edu/api/stats?key=qFuWyb9A1pIkykQ'
-  @stats = HTTParty.get(@STATURL)
-  @statshash  = JSON.parse(@stats.body)
-  total_registrations =  @statshash['stats']['total_registrations']
-   puts   total_registrations 
-  Dashing.send_event('totalregisters', { current:total_registrations}) #, last: last_valuation 
+  #@STATURL = 'http://run.recsports.vt.edu/api/stats?key=qFuWyb9A1pIkykQ'
+  #@stats = HTTParty.get(@STATURL)
+  #@statshash  = JSON.parse(@stats.body)
+  #total_registrations =  @statshash['stats']['total_registrations']
+  # puts   total_registrations 
+  #Dashing.send_event('totalregisters', { current:total_registrations}) #, last: last_valuation 
   
 
 Dashing.scheduler.every '1000s' do
-  #last_valuation = current_valuation
+ runjob
+end
+
+scheduler.in '3s' do
+  runjob
+end
+
+def runjob
+   #last_valuation = current_valuation
   #current_valuation = rand(100)
 
   #APIKEY = 'qFuWyb9A1pIkykQ'
